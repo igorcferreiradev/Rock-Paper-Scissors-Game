@@ -1,6 +1,8 @@
 # Rock-Paper-Scissors-Game✊✋✌️
 
-A simple, interactive Rock Paper Scissors game built using JavaScript, HTML, and CSS. This game allows users to play against the CPU, and the animations and intuitive design make it enjoyable and easy to use.
+A straightforward, interactive Rock Paper Scissors game created with JavaScript, HTML, and CSS that brings the beloved hand game to life in a web browser.<br>Players compete against the CPU, with the CPU's selections generated randomly each round. 
+
+The game features smooth animations and a user-friendly design. After the player makes a selection—Rock, Paper, or Scissors—the CPU randomly picks its option, and both selections are revealed with dynamic shake animations to build suspense.<br>The interface then shows the winner according to the traditional game rules.
 
 Features
 
