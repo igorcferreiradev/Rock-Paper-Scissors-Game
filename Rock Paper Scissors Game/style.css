@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(-45deg, #0c24fa, #ba86ff, #df1ec581, #ba86ff, #0c24fa);
+    background-size: 270% 270%;
+    animation: gradientAnimation 6s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    padding: 3rem 7rem;
+    border-radius: 14px;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 14px;
+    position: relative;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.container::after, .container::before {
+    content: ''; 
+    position: absolute;
+    height: 100%;   
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), transparent 70%, #7d2ae8, #fd4ee6e7);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 4px;
+    border-radius: 14px;
+    animation: 5s spin linear infinite;
+}
+
+.container::before {
+    filter: blur(1.5rem);
+    opacity: 1.5;  /*controls how strong the glowing is */
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+.result_images {
+    display: flex;
+    column-gap: 7rem;
+}
+
+.container.start .user_result {
+    transform-origin: left;
+    animation: userShake 0.7s ease infinite;
+}
+
+@keyframes userShake {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .cpu_result {
+    transform-origin: right;
+    animation: cpuShake 0.7s ease infinite;
+}
+
+@keyframes cpuShake {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+.result_images img {
+    width: 100px;
+}
+
+.user_result img {
+    transform: rotate(90deg);
+}
+
+.cpu_result img {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-top: 1.5rem;
+    padding: 10px 20px; 
+    background-color: #7c2ae8bb; 
+    border: 3px solid #7c2ae8d5;
+    border-radius: 10px; 
+    transition: background-color 0.3s, color 0.3s; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.option_image img {
+    width: 50px;
+}
+
+.option_images {
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+    justify-content: space-between;
+}
+
+.container.start .option_images {
+    pointer-events: none;
+}
+
+.option_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+    opacity: 1;
+}
+
+.option_image.active {
+    opacity: 1;
+}
+
+.option_image img {
+    pointer-events: none;
+}
+
+.option_image p {
+    color: #7d2ae8;
+    font-size: 1.235rem;
+    margin-top: 1rem;
+    pointer-events: none;
+}
