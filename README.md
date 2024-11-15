@@ -1,4 +1,4 @@
-# ✊✋✌️ Rock-Paper-Scissors-Game
+# <h1 align="center"> ✊✋✌️ Rock-Paper-Scissors-Game
 
 A straightforward, interactive **Rock Paper Scissors** game created with **JavaScript**, **HTML**, and **CSS** that brings the beloved hand game to life in a web browser. Players compete against the CPU, with the CPU's selections generated randomly each round.
 
